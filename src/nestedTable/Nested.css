@@ -1,0 +1,40 @@
+.nestedTable {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.nestedTable label {
+    flex: 1 1;
+    background: #f6f9fc;
+    padding: 10px;
+    color: #8898aa;
+    font-size: 14px;
+}
+.nestedTable1 {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #e9ecef;
+}
+.nestedTable1 label {
+    flex: 1 1;
+    text-align: center;
+    background: #fff;
+    padding: 10px;
+    color: #000;
+}
+.main_table .container {
+    padding: 0;
+}
+.nestedTable1 label {
+    font-size: 14px;
+    font-weight: 400!important;
+    text-align: left;
+}
+.main_table {
+    box-shadow: 0 0 2rem 0 rgb(136 152 170 / 15%) !important;
+    margin-top: 70px;
+}

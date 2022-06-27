@@ -1,0 +1,105 @@
+
+.containeradmin{
+    margin-top: 50px;
+  }
+   .download-link {
+    width: 40px;
+    height: 40px;
+    display: flex;
+  }
+  .export-csv {
+    background: url(https://files-manywho-com.s3.amazonaws.com/d11c1d53-eff3-40e1-a17a-fe4804cf5333/csv.svg);
+    color: transparent;
+    background-size: 25px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding-left: 60px;
+    width: 40px;
+    box-shadow: none;
+    color: transparent !important;
+  }
+  .dis{
+    display:flex;
+  }
+  .sb-example-1 .search {
+    width: 100%;
+    position: relative;
+    display: flex;
+  }
+  .sb-example-1 .searchTerm {
+    width: 100%;
+    border: 3px solid #2f4960;
+    border-right: none;
+    padding: 5px;
+    border-radius: 25px ;
+    outline: none;
+    color: #2f4960;
+  }
+  .sb-example-1 .searchTerm:focus{
+    color: #2f4960;
+  }
+  .sb-example-1 .searchButton {
+    width: 40px;
+    
+    border: 1px solid #2f4960;
+    background: #2f4960;
+    /* text-align: center; */
+    color: #fff;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 20px;
+    margin-left: -34px;
+  }
+  .outer_loader {
+    position: fixed;
+    top: 0;
+    background: #080000db;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 9999;
+  }
+  .loader {
+    border: 5px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 5px solid #3498db;
+    width: 80px;
+    height: 80px;
+    animation: spin 2s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+  
+  }
+  .insiderLoader {
+    display: none;
+  }
+  /* Safari */
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  .btnsearch2 {
+    border-radius: 100vw;
+    min-width: 125px;
+    /* padding: 10px 16px; */
+    box-shadow: none;
+    background: #033D58;
+    color: #fff;
+    text-transform: uppercase;
+    outline: 0;
+    border: 0;
+    /* margin-left: 20px; */
+    text-align: center;
+  }
+  .dis2{
+    display: contents!important;
+  }
