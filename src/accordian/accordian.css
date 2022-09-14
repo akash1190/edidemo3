@@ -193,8 +193,7 @@ ul.dropdown-menu.show li a {
 	display: flex;
 	justify-content: flex-start;
 	width: 100%;
-	background-image: url("C:/Akashtest/test5/public/dist/img/login-bg01.jpg");
-	background-size: cover;
+background-image: url("%PUBLIC_URL%/login-bg01.jpg"); 
 	background-position: center;
 }
 table{width: 100%;}
