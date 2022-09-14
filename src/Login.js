@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
-import {decode as base64_decode, encode as base64_encode} from 'base-64';
+import './accordian/accordian.css';
+
 import { useState } from "react";
 import { loginApi } from "./ApiServices";
 const Login=()=>{
@@ -38,7 +39,7 @@ const callBasicAuthAPi=async()=>{
   if(res.status==200){
    const response = res.data;
    console.log(res);
-   if(response.Status==='success'){
+   if(response.Status==='Success'){
        navigate('/');
    }else{
        alert(response.message)
@@ -71,10 +72,13 @@ const callBasicAuthAPi=async()=>{
       
         <div className="login_page">
            <div className="banner responsive">
-                <img src="dist/img/banner.jpg" />
+                &nbsp;
            </div>
            <div className="account">
-               <h4>Welcome to EDI Dashboard</h4>
+           <div className="sub-block">
+      <h1>Welcome</h1>
+    
+               
                <p><small>Please sign-in to your account and start the adventure</small></p>
                <div className="form_section">
                    <div className="form-group">
@@ -102,6 +106,7 @@ const callBasicAuthAPi=async()=>{
                        <p>New on our platform?<a href="javascript:void(0);" className="btn create_account font-weight-bold" onClick={goToCreateAccount}>Create account</a></p>
                    </div>
                </div>
+           </div>
            </div>
         </div>
       

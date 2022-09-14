@@ -24,11 +24,12 @@ export default class Dashboard extends Component {
     <div className="container-fluid">
       <div className="row">
         <div className="col-lg-3 col-6">
-          <div className="small-box bg-info">
-            <div className="inner">
+          <div className="small-box bg-info">          
+            <div className="inner">            
               <h3>150</h3>
               <p>New Orders</p>
             </div>
+            <img src="dist/img/circle.png" className="card-img-absolute"/>
             <div className="icon">
               <i className="ion ion-bag" />
             </div>
@@ -41,6 +42,7 @@ export default class Dashboard extends Component {
               <h3>53<sup style={{fontSize: 20}}>%</sup></h3>
               <p>Bounce Rate</p>
             </div>
+            <img src="dist/img/circle.png" className="card-img-absolute"/>
             <div className="icon">
               <i className="ion ion-stats-bars" />
             </div>
@@ -53,6 +55,7 @@ export default class Dashboard extends Component {
               <h3>44</h3>
               <p>User Registrations</p>
             </div>
+            <img src="dist/img/circle.png" className="card-img-absolute"/>
             <div className="icon">
               <i className="ion ion-person-add" />
             </div>
@@ -65,6 +68,7 @@ export default class Dashboard extends Component {
               <h3>65</h3>
               <p>Unique Visitors</p>
             </div>
+            <img src="dist/img/circle.png" className="card-img-absolute"/>
             <div className="icon">
               <i className="ion ion-pie-graph" />
             </div>

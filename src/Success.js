@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 const Success = () =>{
     const navigate=useNavigate();
     const goToReceiver=()=>{
-        navigate('/login');
+        navigate('/resetpassword');
     }
     return(
         <div>

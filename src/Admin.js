@@ -15,7 +15,7 @@ const Admin = () => {
             <div class="table-title">
                 <div class="row">
                     <div className="col-sm-6"><h2>Active <b>Users</b></h2></div>
-                    <div class="col-sm-3 dis">
+                    <div class="col-sm-3 dis col-sm-33">
                     <div class="col-sm-2 dis2"> <h3>Export as:</h3></div>
            
                     <div class="col-sm-2">
@@ -37,7 +37,7 @@ const Admin = () => {
 
                     </div>
                 </div>
-            </div>
+           
             <table class="table">
                 <thead>
                     <tr>
@@ -90,7 +90,7 @@ const Admin = () => {
             <ul class="pagination pagination-sm"><li class="page-item"><a href="#" class="page-link">«</a></li><li class="page-item"><a href="#" class="page-link">1</a></li><li class="page-item"><a href="#" class="page-link">2</a></li><li class="page-item"><a href="#" class="page-link">3</a></li><li class="page-item"><a href="#" class="page-link">»</a></li></ul>
           
         </div>
-       
+        </div>
 </>
   )
 }

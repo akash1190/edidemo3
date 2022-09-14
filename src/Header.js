@@ -10,6 +10,10 @@ goToReceiver = () => {
 const navigate=useNavigate();
 navigate('/details');
 }
+goToInvoice_810 = () => {
+   const navigate=useNavigate();
+   navigate('/invoice_810');
+   }
 componentDidMount() {
 if (window.location.pathname === '/login'  || window.location.pathname=='/forgotPassword' 
 || window.location.pathname=='/resetpassword' || window.location.pathname=='/createAccount') {
@@ -47,11 +51,18 @@ return (
                <li className="dropdown-submenu">
                   <a tabIndex={-1} href="#">Transaction Search</a>
                   <ul className="dropdown-menu">
-                     <li><a href="#">PO(850)</a></li>
-                     <li><a href="#">PO Ack.(855)</a></li>
-                     <li><a href="#">PO Ack.(856)</a></li>
-                     <li><a href="#">PO Ack.(857)</a></li>
-                     <li><a href="#">PO Ack.(858)</a></li>
+                     <li><a href="/po_850">PO (850)</a></li>
+                     <li><a href="/Purchase_Order_Acknowledgement_855">PO Ack.(855)</a></li>
+                     <li><a href="/Po_change_860">PO Change (860)</a></li>
+                     <li><a href="/Purchase_Order_Change_Acknowledgement_865">PO Change Ack.(865)</a></li>
+                     <li><a href="/shipment_856">Shipment (856)</a></li>
+                     <li><a href="/invoice_810" onClick={this.goToInvoice_810}>Invoice - 810</a></li>
+                     <li><a href="/Order_Status_Report_870">Order Status Report (870)</a></li>
+                     <li><a href="/acknowledgement_997"> Acknowledgement (997)</a></li>
+                     
+                    
+                     
+                    
                   </ul>
                </li>
             </ul>
@@ -86,9 +97,28 @@ return (
             </ul>
          </div>
       </li> */}
-      <li className="nav-item d-none d-sm-inline-block">
-         <a href="/trackpo" className="nav-link" onClick={this.goToReceiver}>Charts</a>
-      </li>
+    <div className="dropdown">
+            <a id="dLabel" role="button" data-toggle="dropdown" className="btn btn-primary" data-target="#" href="/page.html">
+            Reports 
+               <div class="arrow-down"></div>
+               <span className="caret" />
+            </a>
+            <ul className="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+            
+               <li className="dropdown-submenu">
+                  <a tabIndex={-1} href="#">Graph Reports</a>
+                  <ul className="dropdown-menu">
+                     <li><a href="Report_850_chart">850 Report</a></li>
+                     <li><a href="Report_856_chart">856 Report</a></li>
+                     <li><a href="Report_810_chart">810 Report</a></li>
+                    
+                    
+                     
+                    
+                  </ul>
+               </li>
+            </ul>
+         </div>
       
       {/* 
       <li className="nav-item d-none d-sm-inline-block">

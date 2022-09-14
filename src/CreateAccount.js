@@ -54,10 +54,11 @@ const CreateAccount=()=>{
     return (
         <div className="login_page">
            <div className="banner">
-                <img src="dist/img/banner.jpg" />
+               &nbsp;
            </div>
            <div className="account createAccount">
-               <h4>Create Account</h4>
+           <div className="sub-block">
+               <h1>Create Account</h1>
                <p><small>Create your account and start your journey</small></p>
                <div className="form_section">
                     <h4>Personal Information:</h4>
@@ -117,14 +118,14 @@ const CreateAccount=()=>{
                    </div>
                
                        <div class="d-grid gap-2 d-md-block">
-  <button class="btnfor" type="button" onClick={callCreateAccount}>Register</button>
-  <button class="btnfor" type="button"  onClick={gobackToPage}>Cancel</button>
+  <button class="btn01" type="button" onClick={callCreateAccount}>Register</button>
+  <button class="btn02" type="button"  onClick={gobackToPage}>Cancel</button>
 </div>
            </div>
                </div>
               
            </div>
-           
+           </div>
         </div>
         )
 }

@@ -1,7 +1,29 @@
 import { useLocation } from "react-router-dom";
-import React from 'react';
+import React, { useState } from 'react';
 import './accordian.css';
+import { getInvoice810 } from "../ApiServices";
+import Invoice_810_table from "./Invoice_810_table";
 const Invoice_810 = () => {
+  const [apiCall,SetApiCall]=useState(0);
+  const [posts, setPosts] = useState([]);
+  const [error, setError] = useState('');
+
+
+  const callApi=async ()=>{
+    const value={"Transaction Type":"810"};
+    
+    const apiResponse = await getInvoice810(value);
+    if(apiResponse.data.Status==='success' || apiResponse.data.Status==='Success'){
+      setPosts(apiResponse.data["810 response"]);
+      SetApiCall(1);
+    }
+    else{
+      setError("No Data Found");
+      SetApiCall(2);
+    }
+    
+  }
+
   return (
    <div class="container">
      <div className="genral_search">
@@ -58,22 +80,13 @@ const Invoice_810 = () => {
                       <h5 className="font-weight-bold">Doc Details</h5>
                       <div class="row">
   <div class="col-4 ">
-  <label>Partner Name</label>
-  <input type="text" className="form-control" />
+  <label>PO Number</label>
+  <input placeholder="Enter Minimum 3 Characters" type="text" className="form-control" />
   </div>
-   {/* <div class="col-4 ">
-  <label>Type</label>
-                        <select class="form-control">
-                        <option></option>
-                          <option>Original</option>
-                          <option>Cancellation</option>
-                          <option>New Order</option>
-                          
-                        </select>
-                    </div> */}
+  
                     <div class="col-4 ">
   <label>Invoice Num</label>
-  <input type="text" className="form-control" />
+  <input type="text"  placeholder="Enter Minimum 3 Characters" className="form-control" />
   </div>
 </div>
                       	
@@ -86,7 +99,7 @@ const Invoice_810 = () => {
                       <div class="row">
   <div class="col-4 ">
   <label>Party Name</label>
-  <input type="text" className="form-control" />
+  <input  type="text" className="form-control" />
   <label>Street</label>
   <input type="text" className="form-control" />
   </div>
@@ -108,7 +121,20 @@ const Invoice_810 = () => {
                   </div>
                   </div>
                   <div className="mt2 pd20">
-                  <button type="submit" className="btnsearch">Search</button>  <button type="submit" className="btnsearch">Cancel</button>
+                  <button type="submit" className="btnsearch" onClick={callApi}>Search</button>  <button type="submit" className="btnsearch">Cancel</button>
+                  </div>
+                  <div className="table_data">
+                  {apiCall==0
+  ? ''
+  : <>
+      {apiCall==1
+        ? <div><Invoice_810_table data={posts}/></div>
+        : <div>{error}</div>
+      }
+      
+    </>
+}
+
                   </div>
     </div>
 

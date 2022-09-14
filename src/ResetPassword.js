@@ -16,7 +16,7 @@ const ResetPassword=()=>{
     if(res.status==200)
     {
         if(res.data.Status==='success')
-            navigate(-1);
+            navigate("/login");
         else
             alert(res.data.Status)
     }
@@ -28,10 +28,11 @@ const ResetPassword=()=>{
     return (
         <div className="login_page">
            <div className="banner">
-                <img src="dist/img/banner.jpg" />
+                &nbsp;
            </div>
            <div className="account resetPassword">
-               <h4>Change Password</h4>
+           <div className="sub-block">
+               <h1>Change Password</h1>
                <div className="form_section">
                <div className="form-group">
                        <label>User Name <span>*</span></label>
@@ -53,10 +54,11 @@ const ResetPassword=()=>{
                    </div>
             
                     <div class="d-grid gap-2 d-md-block">
-  <button class="btnfor" type="button" onClick={submitRequest}>ok</button>
-  <button class="btnfor" type="button" onClick={gobackToPage}>Cancel</button>
+  <button class="btn01" type="button" onClick={submitRequest}>Ok</button>
+  <button class="btn02" type="button" onClick={gobackToPage}>Cancel</button>
 </div>
            </div>
+               </div>
                </div>
               
            </div>

@@ -7,15 +7,15 @@ const ForgotPassword=()=>{
     const navigate=useNavigate();
     const [userName,setUserName]=useState("");
     const gobackToPage=()=>{
-        navigate(-1);
+        navigate("/resetpassword");
    }
    const submitRequest=async()=>{
 
     const res = await forgotPassword(userName);
     if(res.status==200)
     {
-        if(res.data.Status==='success')
-            navigate(-1);
+        if(res.data.Status==='Success')
+            navigate("/resetpassword");
         else
             alert(res.data.Status)
     }
@@ -27,10 +27,11 @@ const ForgotPassword=()=>{
     return (
         <div className="login_page">
            <div className="banner">
-                <img src="dist/img/banner.jpg" />
+                &nbsp;
            </div>
            <div className="account forgetPassward">
-               <h4>Forgot Password</h4>
+           <div className="sub-block">
+               <h1>Forgot Password</h1>
                <div className="form_section">
                    <div className="form-group">
                        <label>Enter Email ID <span>*</span></label>
@@ -39,10 +40,12 @@ const ForgotPassword=()=>{
                        />
                    </div>
                    <div class="d-grid gap-2 d-md-block">
-                        <button class="btnfor" type="button" onClick={submitRequest}>Set Password</button>
-                        <button class="btnfor" type="button" onClick={gobackToPage}>Cancel</button>
+                        <button class="btn01" type="button" onClick={submitRequest}>Submit</button>
+                        <button class="btn02" type="button" onClick={gobackToPage}>Cancel</button>
                     </div>
+                   
                </div>
+              </div>
            </div>
         </div>
         )

@@ -1,7 +1,30 @@
 import { useLocation } from "react-router-dom";
-import React from 'react';
+import React, { useState } from 'react';
 import './Table.css';
+import { getacknowledgemt997 } from "../ApiServices";
+import Acknowledgement_997_table from "./Acknowledgement_997_table";
+
 const Acknowledgement_997 = () => {
+  const [apiCall,SetApiCall]=useState(0);
+  const [posts, setPosts] = useState([]);
+  const [error, setError] = useState('');
+
+
+  const callApi=async ()=>{
+    const value={"Transaction Type":"997"};
+    
+    const apiResponse = await getacknowledgemt997(value);
+    //if(apiResponse.data.Status==='success'){
+      if(apiResponse.data.CurrentDate!=''){
+      setPosts(apiResponse.data["Response"]);
+      SetApiCall(1);
+    }
+    else{
+      setError("No Data Found");
+      SetApiCall(2);
+    }
+    
+  }
   return (
    <div class="container">
           <div className="genral_search">
@@ -118,8 +141,20 @@ const Acknowledgement_997 = () => {
 
 
               <div className="mt2 pd20">
-                  <button type="submit" className="btnsearch">Search</button>  <button type="submit" className="btnsearch">Cancel</button>
+                  <button type="submit" className="btn01" onClick={callApi}>Search</button>  <button type="submit" className="btn02">Cancel</button>
                   </div>
+                  <div className="table_data">
+                  {apiCall==0
+  ? ''
+  : <>
+      {apiCall==1
+        ? <div><Acknowledgement_997_table data={posts}/></div>
+        : <div>{error}</div>
+      }
+      
+    </>
+}
+ </div>
         
     </div>
 
