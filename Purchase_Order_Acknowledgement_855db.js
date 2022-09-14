@@ -49,6 +49,6 @@ app.post("/Purchase_Order_Acknowledgement_855db", function (req, res){
 
 });
 });
-app.listen (3001, () => {
+app.listen (process.env.PORT || 3001, () => {
 console.log("listening on port 3001");
 });
