@@ -6,13 +6,9 @@ const app = express()
 
 const PORT = process.env.PORT || 3001
 
-app.use(express.static(path.join(__dirname + "/public")))
-app.get('*', function(_, res) {
-  res.sendFile(path.join(__dirname, '/public/index.html'), function(err) {
-    if (err) {
-      res.status(500).send(err)
-    }
-  })
+const root = require('path').join(__dirname, 'public', 'build')
+app.use(express.static(root));
+app.get("*", (req, res) => {
+    res.sendFile('index.html', { root });
 })
-
 app.listen(PORT)
