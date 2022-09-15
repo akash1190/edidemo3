@@ -49,15 +49,7 @@ app.post("/Purchase_Order_Acknowledgement_855db", function (req, res){
 
 });
 });
-const path = require('path');
-if (process.env.NODE_ENV === 'production') {
-  // Serve any static files
-  app.use(express.static(path.join(__dirname, 'client/build')));
-// Handle React routing, return all requests to React app
-  app.get('*', function(req, res) {
-    res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
-  });
-}
+
 app.listen (process.env.PORT || 3001, () => {
 console.log("listening on port 3001");
 });
