@@ -1,7 +1,7 @@
 const sql = require("mssql");
 const config={
 server: "10.131.10.15",
-port:  1433,
+port: process.env.PORT || 1433,
 user: "sa",
 password: "sa$432!@",
 database: "ReactJS",
