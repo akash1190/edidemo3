@@ -6,7 +6,7 @@ const app = express()
 
 const PORT = process.env.PORT || 3001
 
-app.use(express.static(path.join(__dirname + "/public/index.html")))
+app.use(express.static(path.join(__dirname + "/public")))
 app.get('*', function(_, res) {
   res.sendFile(path.join(__dirname, '/public/index.html'), function(err) {
     if (err) {
